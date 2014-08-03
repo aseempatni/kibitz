@@ -1,0 +1,123 @@
+/* GLOBAL STYLES */
+
+html{overflow:auto}
+body{color:#000;background-color:#fff;padding:0px;margin:0px;overflow:auto;background-image:url(css3/bg.png);background-repeat:repeat-x}
+td,p,div{font-family:georgia,serif;font-size:13px;text-align:left}
+input,select,textarea{font-family:georgia,serif;font-size:13px;border:1px solid #5279A2;color:#000;background-color:#fff}
+img{border-width:0px} 
+
+.r{text-align:right} 
+.s{font-size:12px} 
+
+.lu{color:#F25A00;background-color:transparent;text-decoration:underline;cursor:pointer} 
+.ln{color:#F25A00;background-color:transparent;cursor:pointer}
+
+
+/* LOGIN, REGISTER, PASSWORD, INFO PAGES */
+
+#lrp_cnt{margin:auto;width:480px;margin-top:80px;padding:0px;text-align:center}
+.lrp_cb1{float:left;background-color:#5279A2;color:#000;width:14px;height:14px;padding:0px;background-image:url(images/cbox.png);background-position:bottom;background-repeat:no-repeat;cursor:pointer}
+.lrp_cb2{float:left;background-color:#5279A2;color:#000;width:14px;height:14px;padding:0px;background-image:url(images/cbox.png);background-position:top;background-repeat:no-repeat;cursor:pointer}
+
+.lrp_lnk{color:#fff;background-color:transparent;cursor:pointer}
+.lrp_btn{font-weight:bold;text-transform:uppercase;color:#fff;background-color:#5279A2;width:120px;height:25px;border:1px solid #fff;text-align:center}
+
+.lrp_nf1{position:absolute;background-color:#5279A2;padding:1px;margin-top:4px;display:none;max-width:280px}
+.lrp_nf2{border:1px solid #fff;color:#000;background-color:#7EA4CA;padding:4px;font-size:10px;font-weight:bold;text-transform:uppercase;}
+
+.lrp_tp1{font-size:13px;height:72px;color:#fff;background-color:#5279A2;}
+.lrp_tp2{font-size:13px;height:42px;color:#fff;background-color:#5279A2;}
+
+.lrp_mid{width:480px;font-size:10px;color:#000;background-color:#7EA4CA;}
+.lrp_bot{font-size:13px;height:38px;color:#000;background-color:#5279A2;}
+
+.lrp_tt1{font-size:14px;font-weight:bold;text-transform:uppercase;color:#fff;background-color:transparent}
+.lrp_tt2{font-size:11px;font-weight:bold;text-transform:uppercase;color:#fff;background-color:transparent}
+
+.lrp_im1{width:150px;height:125px;background-color:transparent;background-image:url(css3/login.png);background-repeat:no-repeat}
+.lrp_im2{width:170px;height:200px;background-color:transparent;background-image:url(css3/register.png);background-repeat:no-repeat}
+.lrp_im3{width:210px;height:110px;background-color:transparent;background-image:url(css3/password.png);background-repeat:no-repeat}
+.lrp_im4{width:120px;height:120px;background-color:transparent;background-image:url(css3/info.png);background-repeat:no-repeat;margin-left:10px}
+
+
+/* MAIN BLAB WINDOW / PRIVATE CHAT */
+
+.blab{overflow:hidden}  
+#sn{position:fixed;bottom:0px;right:0px}
+
+#blab_top{position:fixed;top:0px;left:0px;right:0px;height:55px;background-color:#5581AF;border-bottom:1px solid #fff}
+#blab_bot{position:fixed;left:0px;right:0px;bottom:0px;height:45px;background-color:#90B0D2;border-top:1px solid #fff}
+
+.blab_histo_a{font-size:10px;font-weight:bold;text-transform:uppercase;line-height:46px;height:46px;padding-left:48px;padding-right:5px;background-color:transparent;background-image:url(images/histo.png);background-repeat:no-repeat;background-position:bottom left;cursor:pointer}
+.blab_histo_b{font-size:10px;font-weight:bold;text-transform:uppercase;line-height:46px;height:46px;padding-left:48px;padding-right:5px;background-color:transparent;background-image:url(images/histo.png);background-repeat:no-repeat;background-position:top left;cursor:pointer}
+.blab_panel_a{font-size:10px;font-weight:bold;text-transform:uppercase;line-height:46px;height:46px;padding-left:48px;padding-right:5px;background-color:transparent;background-image:url(images/panel.png);background-repeat:no-repeat;background-position:bottom left;cursor:pointer}
+.blab_panel_b{font-size:10px;font-weight:bold;text-transform:uppercase;line-height:46px;height:46px;padding-left:48px;padding-right:5px;background-color:transparent;background-image:url(images/panel.png);background-repeat:no-repeat;background-position:top left;cursor:pointer}
+.blab_exitt_a{font-size:10px;font-weight:bold;text-transform:uppercase;line-height:46px;height:46px;padding-left:48px;padding-right:5px;background-color:transparent;background-image:url(images/exitt.png);background-repeat:no-repeat;background-position:bottom left;cursor:pointer}
+.blab_exitt_b{font-size:10px;font-weight:bold;text-transform:uppercase;line-height:46px;height:46px;padding-left:48px;padding-right:5px;background-color:transparent;background-image:url(images/exitt.png);background-repeat:no-repeat;background-position:top left;cursor:pointer}
+.blab_messg_a{margin-left:1px;width:42px;height:42px;background-color:transparent;background-image:url(images/messg.png);background-repeat:no-repeat;background-position:bottom left;cursor:pointer}
+.blab_messg_b{margin-left:1px;width:42px;height:42px;background-color:transparent;background-image:url(images/messg.png);background-repeat:no-repeat;background-position:top left;cursor:pointer;position:relative;left:1px}
+
+.blab_logo{background-color:transparent;background-image:url(images/logo_w.png);width:200px;height:45px;background-repeat:no-repeat;float:right;margin-top:4px;margin-right:4px;}
+
+#blab_chat{position:fixed;left:13px;top:60px;bottom:55px;width:98%;background-color:transparent;overflow:hidden}
+#blab_itbl{text-transform:uppercase;font-weight:bold;display:none;width:100%;padding:12px;text-align:center}
+
+
+/* ONLINE COLUMN / MAIN BLAB WINDOW */
+
+#blab_onlb{position:absolute;right:-1px;top:65px;width:20px;height:65px;background-color:#5279A2;border:2px solid #7EA4CA;background-image:url(css3/show_on.png);cursor:pointer}
+#blab_onlt{position:fixed;right:1%;top:65px;height:45px;width:18%;color:#fff;background-color:#5279A2;display:none}
+.blab_onli{float:left;margin-left:8px;margin-right:8px;margin-top:16px;font-size:11px;font-weight:bold;text-transform:uppercase}
+.blab_onhd{float:right;margin-right:10px;margin-top:18px;color:#000;background-color:transparent;cursor:pointer}
+#blab_onll{padding-top:8px;position:fixed;right:1%;top:111px;bottom:55px;width:18%;overflow:hidden;background-color:#7EA4CA;display:none}
+
+.oo{font-size:12px;font-weight:bold;line-height:13px;white-space:nowrap;color:#F25A00;background-color:transparent;margin-left:8px}
+
+
+/* OTHER ELEMENTS - MAIN BLAB WINDOW / PRIVATE CHAT */
+
+#blab_ascr{position:fixed;left:1px;bottom:48px;background-color:#90B0D2;color:#F25A00;padding:5px;text-transform:uppercase;font-size:10px;font-weight:bold;border:1px solid #fff;display:none;cursor:pointer}
+#blab_scrh{position:fixed;left:5px;bottom:50px;background-color:#90B0D2;color:#F25A00;padding:5px;text-transform:uppercase;font-size:10px;font-weight:bold;border:1px solid #fff;display:none;cursor:pointer;line-height:26px}
+
+#blab_ppnt1{position:fixed;left:5px;max-width:420px;bottom:50px;padding:10px;color:#000;background-color:#90B0D2;border:1px solid #fff;display:none}
+#blab_paint1{position:fixed;left:5px;max-width:420px;bottom:50px;padding:10px;color:#000;background-color:#90B0D2;border:1px solid #fff;display:none}
+#blab_smilies{position:fixed;left:5px;width:265px;bottom:50px;padding:10px;color:#000;background-color:#90B0D2;border:1px solid #fff;}
+#blab_colours{position:fixed;left:5px;width:255px;bottom:50px;padding:10px;color:#000;background-color:#90B0D2;border:1px solid #fff;display:none}
+
+.blab_lbar{font-size:12px;font-weight:bold;text-transform:uppercase}
+
+.blab_bicn{border:2px solid #7EA4CA;cursor:pointer;}
+.blab_bica{border:2px solid #F25A00;cursor:pointer;}
+.blab_ss{cursor:pointer}
+.blab_us{font-size:12px;font-weight:bold;cursor:pointer}
+.blab_cc{font-size:8px;width:10px;height:10px;border:1px solid #fff;margin:1px;float:left;}
+.blab_trr{background-color:#6A90B7;color:#000}
+.blab_pt1{display:inline-block;padding:0px;width:68px;height:38px;background-image:url(images/no_thumb.png);cursor:pointer;border:2px solid #ccc}
+.blab_pt2{width:68px;height:38px;background-image:url(images/no_thumb.png);border-width:0px}
+
+#arri1{position:absolute;left:1px;top:64px;cursor:pointer}
+#arri2{position:absolute;right:1%;bottom:55px;cursor:pointer;display:none}
+
+
+/* PANELS */
+
+#blab_panel{position:absolute;display:none}
+#panel_top{padding:13px;padding-top:20px;padding-bottom:20px;font-size:13px;font-weight:bold;text-transform:uppercase;background-color:#5279A2;color:#fff}
+#panel_mid{padding:12px;height:250px;background-color:#7EA4CA;color:#000}
+#panel_bot{padding:12px;font-size:11px;font-weight:bold;text-transform:uppercase;background-color:#5279A2;color:#F25A00;}
+
+.panel_tdl{font-size:11px;font-weight:bold;text-transform:uppercase;white-space:nowrap;text-align:right;}
+.panel_tdr{font-size:11px;font-weight:bold;text-transform:uppercase;text-align:left;}
+
+.panel_tsn{float:left;margin:1px;width:7px;height:7px;font-size:5px;border:1px solid #fff;cursor:pointer}
+.panel_lod{width:100%;height:100%;background-image:url(css3/loading.gif);background-repeat:no-repeat;background-position:center center}
+.panel_btn{font-weight:bold;text-transform:uppercase;color:#fff;background-color:#5279A2;width:120px;height:25px;border:1px solid #fff;text-align:center}
+
+
+/* PAINT TOOLBAR */
+
+#p_mnu{position:absolute;left:0px;top:222px;width:398px;border:1px solid #7EA4CA;padding-top:5px;padding-bottom:5px;background-color:#EDF1F1}
+#p_btt{font-size:10px;float:right;margin-right:5px;background-color:#CEE0ED;border:2px solid #7EA4CA;font-weight:bold;height:25px}
+.p_bdy{margin:0px;padding:0px;overflow:hidden;background-color:#90B0D2;background-image:none;color:#000}
+.p_ccx{font-size:9px;width:18px;height:23px;border:1px solid #fff;padding:0px;line-height:22px;text-align:center;font-weight:bold;background-color:#CEE0ED;float:left;cursor:pointer}
+.p_ccy{font-size:8px;width:18px;height:10px;border:1px solid #fff;margin-left:1px;cursor:pointer;padding:0px;text-align:center;background-color:#CEE0ED}

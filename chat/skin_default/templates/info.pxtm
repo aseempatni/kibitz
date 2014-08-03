@@ -1,0 +1,33 @@
+<body style="text-align:center">
+
+<div id="lrp_cnt">
+
+<div class="lrp_tp2">&nbsp;</div>
+
+<div class="lrp_mid">
+<div style="height:25px">&nbsp;</div>
+<table cellpadding="8" style="width:100%;height:100%">
+<tr>
+<td style="width:15%"><div class="lrp_im4">&nbsp;</div></td>
+<td><?php print $info;?></td></tr></table>
+<div style="height:25px">&nbsp;</div>
+</div>
+
+<div class="lrp_bot">
+<table cellpadding="8" style="width:100%;height:100%"><tr>
+<td style="width:90%"><div style="float:right" class="lrp_tt2">
+
+<?php if(isset($link)){?>
+<span id="rdr" class="lrp_lnk" style="display:none" onclick="go('<?php print $link;?>');return false"><?php print $lang['continue'];?></span> &nbsp;
+<script type="text/javascript">
+function r(){document.getElementById('rdr').style.display='block';} setTimeout('r()',1000);
+</script>
+<?php }?>
+
+</div></td></tr></table>
+</div>
+</div>
+<div id="sn"></div>
+<script type="text/javascript">
+set_opa('lrp_cnt',1);
+</script><p><br /><br /></p></body></html>

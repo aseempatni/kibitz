@@ -1,0 +1,27 @@
+<?php $txt=str_replace('&','&amp;',$settings['logo']);$txt=htmrem($txt);?>
+<table cellspacing="1" cellpadding="0"><tr>
+<td valign="top" class="navbar2">
+<div style="margin:10px;text-align:right;white-space:nowrap">
+<a href="admin.php?q=options"><?php print $lang['settings'];?></a> &middot;<br />
+<a href="admin.php?q=config">config.php</a> &middot;<br />
+<a href="admin.php?q=faq"><?php print $lang['edit'];?> &raquo; FAQ</a> &middot;<br />
+<a href="admin.php?q=logo"><?php print $lang['edit'];?> &raquo; LOGO</a> &middot;<br />
+<a href="admin.php?q=database"><?php print $lang['database'];?></a> &middot;<br />
+<a href="admin.php?q=acpkey"><?php print $lang['acpkey'];?></a> &middot;<br />
+<a href="admin.php?q=update"><?php print $lang['update'];?></a> &middot;<br />
+</div></td><td valign="top" class="content">
+
+<div class="title"><?php print $lang['edit'];?> &raquo; LOGO</div>
+<p style="text-align:justify"><?php print $lang['st7_desc'];?></p>
+
+<div class="hr"></div>
+
+<form id="fn" action="admin.php" method="post" style="margin:0px;padding:0px">
+<p><textarea  name="logo" style="width:100%;height:200px;overflow:auto" cols="10" rows="5"><?php print $txt;?></textarea></p>
+<p>
+<input type="hidden" name="rdr" value="1" />
+<input class="btn" type="button" value="<?php print $lang['save'];?>" onclick="document.forms.fn.submit()" />
+<input class="btn" type="button" value="<?php print $lang['reset'];?>" onclick="document.forms.fn.reset()" />
+</p></form>
+
+</td></tr></table>
