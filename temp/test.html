@@ -1,0 +1,29 @@
+<html>  
+  <head><title>Test Page</title>  
+  <style type='text/css'>  
+    #results{ width: 40%; margin-left: 30%; border: 1px solid gray; padding: 5px; height: 200px; overflow: auto; }   
+  </style>  
+  <script type='text/javascript'>  
+    // Parses returned response and extracts  
+    // the title, links, and text of each news story.  
+    function top_stories(o){  
+      var items = o.query.results.bossresponse.news.results.result;  
+      var output = '';  
+      var no_items=items.length;  
+      for(var i=0;i<no_items;i++){  
+        var title = items[i].title;  
+        var link = items[i].link;  
+        var desc = items[i].description;  
+        output += "<h3><a href='" + link + "'>"+title+"</a></h3>" + desc + "<hr/>";  
+      }  
+      // Place news stories in div tag  
+      document.getElementById('results').innerHTML = output;    
+    }  
+    </script>  
+  </head>  
+<body>  	
+  <div id='results'></div>
+  <script src='http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20boss.search%20where%20q%3D%22apple%20ipad%22%20and%20service%3D%22news%22%20and%20ck%3D%22dj0yJmk9YWF3ODdGNWZPYjg2JmQ9WVdrOWVsWlZNRk5KTldFbWNHbzlNVEEyTURFNU1qWXkmcz1jb25zdW1lcnNlY3JldCZ4PTUz%22%20and%20secret%3D%22a3d93853ba3bad8a99a175e8ffa90a702cd08cfa%22%3B&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'>  
+  </script>   
+  </body>  
+</html> 

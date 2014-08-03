@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kibitz &middot; Chat</title>
+
+  <script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+  <script src="js/yql.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+     <script>
+/*	
+//enter refresh time in "minutes:seconds" Minutes should range from 0 to inifinity. Seconds should range from 0 to 59
+var limit="0:15"
+
+if (document.images){
+var parselimit=limit.split(":")
+parselimit=parselimit[0]*60+parselimit[1]*1
+}
+function beginrefresh(){
+if (!document.images)
+return
+if (parselimit==1)
+window.location.reload()
+else{ 
+parselimit-=1
+curmin=Math.floor(parselimit/60)
+cursec=parselimit%60
+if (curmin!=0)
+curtime=curmin+" minutes and "+cursec+" seconds left until page refresh!"
+else
+curtime=cursec+" seconds left until page refresh!"
+window.status=curtime
+setTimeout("beginrefresh()",1000)
+}
+}
+
+window.onload=beginrefresh
+*/
+</script>
+
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+      <![endif]-->
+
+  <body>
+   <div id="container-chat-bg"></div>
+   <div class="container-narrow">
+
+    <div class="masthead" style="porition:fixed; top:0%;">
+      <ul class="nav nav-pills pull-right">
+       <li class="active"><a>Welcome</a></li> 
+       <li><a href="main.html">Home</a></li>
+       <li><a href="#about">About</a></li>
+       <li><a href="login.html">Log-out</a></li>
+       <li><a href="#">Contact</a></li>
+     </ul>
+     <h2 class="muted">Kibitz!</h2>
+   </div>
+
+   <hr>
+
+   <div class="container">
+    <div class="row-fluid">
+
+      <div class="span2">
+        <div class="row">
+          <div class="span12">
+            <h4>
+              <img src="img/youtube-logo.jpg" style="height:30px;">
+              Videos 
+            </h4>
+            <div id="container-videos"></div>
+            <hr>
+          </div>
+        </div>
+      </div>
+
+      <div class="span7">
+        <div class="row-fluid">
+          <div class="contentbox">
+            <h4>
+              <img src="img/Wikipedia-logo-v2.svg.png"  style="height:30px;">
+              Content</h4><hr>
+              <div id="container-wiki"></div>
+            </div>
+            <div class="chatbox">
+              <h4> 
+                <img src="img/Chat-icon.png"  style="height:30px;"/>
+                Chat Area
+              </h4>
+              <hr>
+              <iframe src="http://10.3.19.18/~arkanathpathak/blab62/blab.php" height="400" width="600"></iframe>
+              <center>
+                <input type="text" id="case2" placeholder="Enter Your Tags Here"/>
+              </input>
+              <input type="button" value="Search" onclick="box();"></input>
+              <script>
+              function box() {
+               keyb = document.getElementById("case2").value;
+              }
+              </script>
+              <input type="button" value="Reload Page" onclick="window.location.reload()"></center>
+            </div>
+          </div>
+        </div>
+
+        <div class="span3">
+         <div class="row-fluid">
+          <div class="span12">
+           <table height="250" border="1">
+            <h4> 
+              News 
+            </h4>
+            <div id="container-news"></div>
+            <div id="container-news-b"></div>
+            <hr/>
+          </table></div>
+          <div class="row-fluid">
+            <div class="span12">
+             <table height="200"><hr>
+             </table>
+           </div>
+         </div>
+       </div>
+     </div>
+
+   </div>
+ </div>
+
+  <!--
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">Made by <a href="http://martinbean.co.uk">Aseem Patni, Utpal Prasad, Arkanath Pathak </a> & <a href="http://ryanfait.com/sticky-footer/"> Gaurav Sharma </a>.</p>
+      </div>
+    </div>
+  -->
+</div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
+  
+  <script>
+  var text;   
+/*
+function showtags()
+{
+    text=document.getElementById("chatresponse").value;
+    return text;    
+  }*/
+//var text;
+function showUser()
+{
+  var text;
+  if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+  {
+    text=xmlhttp.responseText;
+  } else {
+    text = "ArkNath";
+  }
+}
+xmlhttp.open("GET","./test.php",false);
+xmlhttp.send();
+
+return text;
+}
+</script>
+<script>
+var searcha =showUser();
+var keya="";
+</script>
+
+<script>
+YUI().use('yql', 'node-base', function (Y) {
+  var keya={};
+  var query = 'select * from contentanalysis.analyze where text="'+[searcha]+'";';
+  Y.YQL(query, function (response) {
+   console.log(response);
+   results = response.query.results.entities.entity;
+
+   if(Object.prototype.toString.call(results) === '[object Array]') {
+     Y.each(results, function (r){
+       var template = '<div width: 160px; height: 160px; display: inline-block;">{content}  </div>';
+       var data={};
+       keya +=' ' + r.text.content;
+       data.content=r.text.content;
+       Y.one('#container').append(Y.Lang.sub(template, data));
+     });
+   }
+   else{ 
+    var template = '<div width: 160px; height: 160px; display: inline-block;">  {content}  </div>';
+    var data={};
+    keya=results.text.content;
+    data.content=results.text.content;
+    Y.one('#container').append(Y.Lang.sub(template, data));
+  }
+});
+});
+</script>
+
+<script> if( keya == null) { 
+	keya = searcha;
+}
+keya='microsoft surface ipad'
+
+//	var key = keya.concat(keyb);
+//key = keya = keyb;
+</script>
+
+<script>
+YUI().use('yql', 'node-base', function (Y) {
+  var query = 'select * from boss.search where q="'+[keya]+'" and service="news" and ck="dj0yJmk9YWF3ODdGNWZPYjg2JmQ9WVdrOWVsWlZNRk5KTldFbWNHbzlNVEEyTURFNU1qWXkmcz1jb25zdW1lcnNlY3JldCZ4PTUz" and secret="a3d93853ba3bad8a99a175e8ffa90a702cd08cfa";';
+  Y.YQL(query, function (response) {
+   console.log(response);
+   results = response.query.results.bossresponse.news.results.result;
+   Y.each(results, function (r) {
+    var template = '<a href="{src}" target="_blank"><div style=""><div><h5>  {title} </h5></div></a>';
+    var data={};
+    data.title=r.title;
+    data.src=r.url;
+    Y.one('#container-news').append(Y.Lang.sub(template, data));
+  });
+ });
+});
+</script>
+
+<script>
+YUI().use('yql', 'node-base', function (Y) {
+  var query = 'select * from boss.search where q="'+[keya]+'" and service="video" and ck="dj0yJmk9YWF3ODdGNWZPYjg2JmQ9WVdrOWVsWlZNRk5KTldFbWNHbzlNVEEyTURFNU1qWXkmcz1jb25zdW1lcnNlY3JldCZ4PTUz" and secret="a3d93853ba3bad8a99a175e8ffa90a702cd08cfa";';
+  Y.YQL(query, function (response) {
+   console.log(response);
+   results = response.query.results.bossresponse.video.results.result;
+   Y.each(results, function (r) {
+    var template = '<a href="{src}" target="_blank"><div><img src="{imgurl}" class="youimg" ><h5> {title} </h5></div></a>';
+    var data={};
+    data.imgurl=r.thumbnailurl;
+    data.title=r.title;
+    data.src=r.url;
+    Y.one('#container-videos').append(Y.Lang.sub(template, data));
+  });
+ });
+});
+</script>
+
+<script>
+YUI().use('yql', 'node-base', function (Y) {
+  var query = 'select * from boss.search where q="'+[keya]+'" and  ck="dj0yJmk9YWF3ODdGNWZPYjg2JmQ9WVdrOWVsWlZNRk5KTldFbWNHbzlNVEEyTURFNU1qWXkmcz1jb25zdW1lcnNlY3JldCZ4PTUz" and secret="a3d93853ba3bad8a99a175e8ffa90a702cd08cfa";';
+  Y.YQL(query, function (response) {
+   console.log(response);
+   var results = response.query.results.bossresponse.web.results.result;
+   var template = '<a href="{src}" target="_blank"><div> {title} </div></a>{content}';
+   var data={};
+   data.title = results[0].title.content;
+   data.src = results[0].url;
+   data.content = results[0].abstract.content;
+   Y.one('#container-wiki').append(Y.Lang.sub(template, data));
+
+ });
+});
+</script>
+
+<script>
+YUI().use('yql', 'node-base', function (Y) {
+  var query = 'select * from boss.search where q="'+[keya]+'" and service="images" and ck="dj0yJmk9YWF3ODdGNWZPYjg2JmQ9WVdrOWVsWlZNRk5KTldFbWNHbzlNVEEyTURFNU1qWXkmcz1jb25zdW1lcnNlY3JldCZ4PTUz" and secret="a3d93853ba3bad8a99a175e8ffa90a702cd08cfa";';
+  Y.YQL(query, function (response) {
+   console.log(response);
+   var results = response.query.results.bossresponse.images.results.result;
+   var template = '<div><img src="{src}" class="chatbg"></div>';
+   var data={};
+   data.src = results[0].url;
+   Y.one('#container-chat-bg').append(Y.Lang.sub(template, data));
+ });
+});
+</script>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>Y! HackU KGP 2013 - Aditya Mangal</title>
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+<body>
+	<div id="container"></div>
+</body>
+<script>
+YUI().use('yql', 'node-base', function (Y) {
+var query = 'select * from contentanalysis.analyze where text="i bought a new ipad yesterday its very cool way better than ";';
+Y.YQL(query, function (response) {
+	console.log(response);
+
+results = response.query.results.enties.entity;
+Y.each(results, function (r) {
+var template = '<a href="{src}" target="_blank"><div style="background: url({src}) no-repeat; width: 160px; height: 160px; display: inline-block;"></div></a>';
+var data={};
+data.src=r.a.img.src;
+Y.one('#container').append(Y.Lang.sub(template, data));
+});
+});
+});
+</script>
